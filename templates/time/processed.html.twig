@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MyFormController!{% endblock %}
+
+{% block body %}
+    <div>
+        <h1>Task #1</h1>
+        <h2>Time processor</h2>
+
+        {% if formData %}
+            <ul>
+                <li>The time zone {{ formData.timezone }} has {{ formData.diffMinutes }} minutes offset to UTC on
+                    the given day at midnight.
+                </li>
+                <li>February in this year is {{ formData.februaryDays }} days long</li>
+                <li>The specified month ({{ formData.currentMonth }}) is {{ formData.currentMonthDays }} days long.</li>
+            </ul>
+        {% endif %}
+        <a class="btn btn-primary" href="{{ path('time_process') }}">Back</a>
+    </div>
+{% endblock %}
